@@ -50,7 +50,7 @@ runs:
       shell: bash
     - name: ✨ Removing old files...
       run: |
-        ssh ssh rm -rf "${{ inputs.FOLDER }}/${{ inputs.REPO }}"; 
+        ssh ssh rm -rf "${{ inputs.FOLDER }}"; 
       shell: bash
     - name: 💧 deploy to vps...
       run: |
