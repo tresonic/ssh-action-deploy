@@ -9,6 +9,9 @@ inputs:
   IP:
     description: "The IP address is a unique identifier that identifies a device on the Internet or on a local network."
     required: true
+  PORT:
+    description: "The Port to use for ssh."
+    default: 22
   USER:
     description: "A user is an agent, either a human agent or a software agent, who uses a computer or network service."
     required: true
@@ -40,7 +43,7 @@ runs:
         Host ssh
           HostName ${{ inputs.IP }}
           User ${{ inputs.USER }}
-          Port 22
+          Port ${{ inputs.PORT }}
           IdentityFile ~/.ssh/ssh.key
           StrictHostKeyChecking no
         END
